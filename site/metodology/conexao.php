@@ -1,8 +1,9 @@
 <?php
-$servidor = "localhost";
-$usuario = "root";
-$senha = "";
-$dbname = "projetometod";
+$host = 'localhost';
+$dbname = 'projetometod';
+$usuario = 'root';
+$senha = '';
 
-//Criar a conexao
-$conn = new mysqli($servidor, $usuario, $senha, $dbname);
+// Conexão com o banco de dados
+$conn = new PDO("mysql:host=$host;dbname=$dbname", $usuario, $senha);
+$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
